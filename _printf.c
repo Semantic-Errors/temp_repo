@@ -50,7 +50,10 @@ void handle_specifier(const char *format, int pos, int *printed_chars,
 	else
 	{
 		if (!(format[pos]))
+		{
 			*printed_chars = -1;
+			return;
+		}
 
 		if (format[pos] != '%')
 			*printed_chars += _putchar('%');
