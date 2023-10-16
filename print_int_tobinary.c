@@ -14,7 +14,7 @@ int convert_to_binary(int number, int *binary_number)
 
 int print_int_tobinary(va_list list)
 {
-	int printed_chars;
+	int printed_chars = 0;
 	int binary_number[64] = {0};
 	int number = va_arg(list, int);
 	int i = convert_to_binary(number, binary_number);
