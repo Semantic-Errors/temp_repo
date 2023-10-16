@@ -8,7 +8,8 @@ int _printf(const char *format, ...)
 	format_specifiers formats_spec[] = {
 		{'c', print_char},
 		{'s', print_string},
-
+		{'i', print_integer},
+		{'d', print_integer},
 		{'\0', NULL}
 	};
 
@@ -22,7 +23,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			handle_specifier(format, i + 1, &printed_chars, formats_spec, list);
+			handle_specifier(format, ++i, &printed_chars, formats_spec, list);
 
 			if (printed_chars == -1)
 				return (printed_chars);
@@ -42,8 +43,8 @@ void handle_specifier(const char *format, int pos, int *printed_chars,
 	int i = 0;
 
 	while (formats_spec[i].specifier != '\0'
-			&& format[pos] != formats_spec[i].specifier)
-			i++;
+		&& format[pos] != formats_spec[i].specifier)
+		i++;
 
 	if (formats_spec[i].specifier != '\0')
 		*printed_chars += formats_spec[i].function(list);

@@ -9,7 +9,7 @@ int print_string(va_list list)
 		str = "(null)";
 
 	while (str[size] != '\0')
-		size++;
+		size += _putchar(str[size]);
 
 	return (size);
 }

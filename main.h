@@ -17,5 +17,6 @@ void handle_specifier(const char *format, int i, int *printed_chars,
 
 int print_char(va_list list);
 int print_string(va_list list);
+int print_integer(va_list list);
 
 #endif /* PRINTF_MAIN_H_ */

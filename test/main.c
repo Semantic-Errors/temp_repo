@@ -6,7 +6,7 @@ int main() {
 	char *null_str = NULL;
 
 	int test = _printf("sadsad%");	/* Return -1 and stops when find % */
-	printf("%d\n", test);
+	printf("\n%d\n", test);	/* should print -1 */
 
 	_printf("sadsad% sadsad\n\n");
 
@@ -17,6 +17,10 @@ int main() {
 	_printf("_printf version null printf %s\n", null_str);
 	_printf("%c", 'S');
 	_printf("%%");
-	_printf("%s\n", NULL);
+	_printf("test\n");
+	/* _printf("%s\n", NULL); SEGFAULT */
+
+	_printf("%d\n", -4564);
+	_printf("%d\n", 4654);
 	return 0;
 }
