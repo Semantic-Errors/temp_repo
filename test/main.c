@@ -22,5 +22,7 @@ int main() {
 
 	_printf("%d\n", -4564);
 	_printf("%d\n", 4654);
+
+    _printf("%b\n", 98);
 	return 0;
 }
